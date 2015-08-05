@@ -1,0 +1,249 @@
+Framework
+	.htaccess
+	index.php
+	Core
+	App.class.php
+		Init()
+		
+		Helpers
+			Securety.class.php
+				escapeString(string)
+				crypt(string, method, salt = null)
+				
+			String.class.php
+				startsWith(string, trigger)
+				endsWith(string, trigger)
+				
+		Librarys
+			Includes
+				
+			RouteManager.class.php
+				Init(Registry)
+				parseURL()
+				routeURL()
+				redirect(route)
+				
+			TemplateManager.class.php // http://www.gabrielemittica.com/cont/guide/how-you-can-create-a-light-and-useful-template-engine-for-php/10/1.html
+				Init(Registry)
+				parseTemplate(template)
+				viewTemplate()
+				
+			ConfigManager.class.php
+				Init(Registry)
+				setKey(key, value)
+				getKey(key)
+				save()
+				load(name)
+				
+			RegistryManager.class.php
+				setKey(key, value)
+				getKey(key)
+				
+			LanguageManager.class.php
+				Init(Registry)
+				getKey(key)
+				setKey(key, value)
+				
+			ControllerManager.class.php
+				Init(Registry)
+				renderController(controller, params)
+				viewController()
+				
+			PackageManager.class.php // https://solardorf.eu/2013/12/05/plugin-in-php-klasse-in-oop/
+				Init(Registry)
+				getEvents()
+				raiseEvent(event, params)
+								
+			ErrorManager.class.php // http://filp.github.io/whoops/				
+			DatabaseManager.class.php //https://github.com/indieteq/PHP-MySQL-PDO-Database-Class
+				
+		Languages
+			de_DE.lang
+			
+		Packages
+			de.wanted-gaming.account
+				main.class.php
+					Init(Registry)
+					register(params)
+					login(params)
+					logout(params)
+					profile(params)
+					update(params)
+				package.json
+					packageName: "Accounting"
+					packageIdentifyer: "de.wanted-gaming.account"
+					packageVersion: "0.0.1"
+					requiredPackages: ['de.wanted-gaming.permission', 'de.wanted-gaming.permission-groups']
+					optionalPackages: ['de.wanted-gaming.sms']
+				config.cfg
+				
+			de.wanted-gaming.permissions
+				main.class.php
+					Init(Registry)
+					setKey(key, value)
+					getKey(key)
+				package.json
+					packageIdentifyer: "de.wanted-gaming.permissions"
+					packageName: "Permissions"
+					packageVersion: "0.0.1"
+				config.cfg
+			
+			de.wanted-gaming.permission-groups
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.permission-groups"
+					packageName: "Permission Groups"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission]
+				Config.cfg
+			
+			de.wanted-gaming.payment
+				main.class.php
+					Init(Registry)
+				package.json
+					packageIdentifyer: "de.wanted-gaming.payment"
+					packageName: "Payment"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission]
+				config.cfg
+				
+			de.wanted-gaming.sms
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.sms"
+					packageName: "Sms"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission]
+				config.cfg
+				
+			de.wanted-gaming.friends
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.friends"
+					packageName: "Friends"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.account]
+				config.cfg
+				
+			de.wanted-gaming.ts3query https://docs.planetteamspeak.com/ts3/php/framework/
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.ts3query"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission]
+				Config.cfg
+				
+			de.wanted-gaming.messageing
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.messageing"
+					packageName: "Messageing"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.posting
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.posting"
+					packageName: "Posting"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.posting-groups
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.posting-groups"
+					packageName: "Posting Groups"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.permission-groups]	
+				Config.cfg
+			
+			de.wanted-gaming.karma
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma"
+					packageName: "Karma"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.karma-minecraft-sync http://chrischurchwell.com/query-rcon-classes-for-php/
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+			
+			de.wanted-gaming.permission-groups-sync-ts3query https://docs.planetteamspeak.com/ts3/php/framework/
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.permission-groups-sync-minecraft-sync 
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.donation-promote
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.auto-promote
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.noteifications
+				main.class.php
+				package.json
+					packageIdentifyer: "de.wanted-gaming.karma-minecraft-sync"
+					packageName: "TS3 Query"
+					packageVersion: "0.0.1"
+					requiredPackages: [de.wanted-gaming.permission, de.wanted-gaming.karma, de.wanted-gaming.account]
+				Config.cfg
+				
+			de.wanted-gaming.
+			
+		Controllers
+			ErrorController.class.php
+			
+		Templates
+			Default
+				Error.<haml|jade|html|tpl>
+			
+		Styles
+			Default
+				Css
+				Less
+				Sass
+				Scss
+				Images
+				Icons
+				Scripts
+				
+		Configs
+			Mysql.conf
+			App.conf
+			Route.conf

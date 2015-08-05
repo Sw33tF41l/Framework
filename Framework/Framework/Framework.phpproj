@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Framework</Name>
+    <ProjectGuid>0434fcfa-eb36-4558-bb6b-092d5e2dcfc7</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Framework</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>Framework</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Core\App.class.php" />
+    <Compile Include="Core\Helpers\Security.class.php" />
+    <Compile Include="Core\Helpers\String.class.php" />
+    <Compile Include="Core\Interfaces\IHost.php" />
+    <Compile Include="Core\Interfaces\IPackage.php" />
+    <Compile Include="Core\Librarys\ConfigManager.class.php" />
+    <Compile Include="Core\Librarys\ControllerManager.class.php" />
+    <Compile Include="Core\Librarys\DatabaseManager.class.php" />
+    <Compile Include="Core\Librarys\ErrorManager.class.php" />
+    <Compile Include="Core\Librarys\LanguageManager.class.php" />
+    <Compile Include="Core\Librarys\PackageManager.class.php" />
+    <Compile Include="Core\Librarys\RouteManager.class.php" />
+    <Compile Include="Core\Librarys\TemplateManager.class.php" />
+    <Compile Include="Core\Packages\de.wanted-gaming.test\main.class.php" />
+    <Compile Include="index.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Core\Configs\" />
+    <Folder Include="Core\Controllers\" />
+    <Folder Include="Core\Helpers\" />
+    <Folder Include="Core\Interfaces\" />
+    <Folder Include="Core\Languages\" />
+    <Folder Include="Core\Librarys\" />
+    <Folder Include="Core\Librarys\Includes\" />
+    <Folder Include="Core\Packages\" />
+    <Folder Include="Core\Packages\de.wanted-gaming.test\" />
+    <Folder Include="Core\Styles\" />
+    <Folder Include="Core\Styles\Default\" />
+    <Folder Include="Core\Styles\Default\Css\" />
+    <Folder Include="Core\Styles\Default\Icons\" />
+    <Folder Include="Core\Styles\Default\Images\" />
+    <Folder Include="Core\Styles\Default\Less\" />
+    <Folder Include="Core\Styles\Default\Sass\" />
+    <Folder Include="Core\Styles\Default\Scripts\" />
+    <Folder Include="Core\Styles\Default\Scss\" />
+    <Folder Include="Core\Templates\" />
+    <Folder Include="Core\Templates\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".htaccess" />
+    <Content Include="Core\Configs\App.conf" />
+    <Content Include="Core\Configs\Mysql.conf" />
+    <Content Include="Core\Configs\Route.conf" />
+    <Content Include="Core\Languages\de_DE.lang" />
+    <Content Include="Core\Packages\de.wanted-gaming.test\package.json" />
+    <Content Include="Core\Styles\Default\Images\Logo.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Framework.db" />
+  </ItemGroup>
+</Project>
