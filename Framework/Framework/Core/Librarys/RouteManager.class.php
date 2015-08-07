@@ -16,6 +16,7 @@ class RouteManager{
     }
 
     public function routeURL() {
+            throw new Exception("Error Handling Include'd");
             if (String::startsWith("-", $this->_RouteArray[0]))
             {
                 echo "true";
